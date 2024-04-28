@@ -2,9 +2,8 @@ import streamlit as st
 import random    
 
 st.title('Helldivers 2 Equipment Randomizer')
-
-st.subheader("""Use the checkboxes to select the equipment you would like randomized. Then click submit to see the loadout for your next deployment.
-            FOR DEMOCRACY""")
+st.subheader('FOR DEMOCRACY')
+st.write("""Use the checkboxes to select the equipment you would like randomized. Then click submit to see the loadout for your next deployment.""")
 
 primary = st.checkbox('Primary Weapons', key='pw')
 pw_list = ['AR-23 Liberator', 'AR-23P Liberator Penetrator', 'AR-23C Liberator Concussive', 'R-63 Diligence', 'R-63CS Diligence Counter-Sniper', 'BR-14 Adjudicator', 'SMG-37 Defender', 'MP-98 Knight', 'SG-8 Punisher', 'SG-8S Slugger', 'SG-225 Breaker', 'SG-225SP Breaker SPRAY & PRAY', 'SG-225IE Breaker Incendiary', 'JAR-5 Dominator', 'R-36 Eruptor', 'ARC-12 Blitzer', 'SG-8P Punisher Plasma', 'LAS-5 Scythe', 'LAS-16 Sickle', 'Plas-1 Scorcher']
