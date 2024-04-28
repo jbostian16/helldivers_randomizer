@@ -1,15 +1,10 @@
 import streamlit as st
-import pandas as pd
-import random
-# Import required Python modules
-import sys
-sys.path.insert(0, r'C:\Scripts\Python')
-import time
-    
+import random    
 
 st.title('Helldivers 2 Equipment Randomizer')
 
-st.subheader('Pick what you want randomized')
+st.subheader("""Use the checkboxes to select the equipment you would like randomized. Then click submit to see the loadout for your next deployment.
+            FOR DEMOCRACY""")
 
 primary = st.checkbox('Primary Weapons', key='pw')
 pw_list = ['AR-23 Liberator', 'AR-23P Liberator Penetrator', 'AR-23C Liberator Concussive', 'R-63 Diligence', 'R-63CS Diligence Counter-Sniper', 'BR-14 Adjudicator', 'SMG-37 Defender', 'MP-98 Knight', 'SG-8 Punisher', 'SG-8S Slugger', 'SG-225 Breaker', 'SG-225SP Breaker SPRAY & PRAY', 'SG-225IE Breaker Incendiary', 'JAR-5 Dominator', 'R-36 Eruptor', 'ARC-12 Blitzer', 'SG-8P Punisher Plasma', 'LAS-5 Scythe', 'LAS-16 Sickle', 'Plas-1 Scorcher']
@@ -26,7 +21,7 @@ stw_list = ['EAT-17', 'GR-8 Recoilless Rifle', 'FAF-14 Spear', 'LAS-99, Quasar C
 strat_backpack = st.checkbox('Backpack Stratagem', key='stbp')
 stbp_list=['AX/AR-23 Guard Dog', 'AX/LAS-5 Guard Dog Rover', 'LIFT-850 Jump Pack', 'B-1 Supply Pack', 'SH-20 Ballistic Shield Backpack', 'SH-32 Shield Generator Pack']
 stratagem = st.checkbox('Stratagems', key='sg')
-sg_list = ['EXO-45 Patriot Exosuit', 'E/MG-101 HMG Emplacement', 'FX-12 Shield Generator Relay', 'A/ARC-3 Tesla Tower', 'MD-6 Anti-Personnel Minefield', 'MD-I4 Incendiary Mines', 'A/MG-43 Machine Gun Sentry', 'A/G-16 Gatling Sentry', 'A/M-12 Mortar Sentry', 'A/AC-8 Autocannon Sentry', 'A/MLS-4X Rocket Sentry', 'A/M-23 EMS Mortar Sentry', 'Orbital Gatling Barrage', 'Orbital Airburst Strike', '	Orbital 120MM HE Barrage', 'Orbital 380MM HE Barrage', 'Orbital Walking Barrag', 'Orbital Laser', 'Orbital Railcannon Strike', 'Orbital Precision Strike', 'Orbital Gas Strike', 'Orbital EMS Strike', 'Orbital Smoke Strike', 'Eagle Strafing Run', 'Eagle Airstrike', 'Eagle Cluster Bomb', 'Eagle Napalm Airstrike', 'Eagle Smoke Strike', 'Eagle 110MM Rocket Pods', 'Eagle 500kg Bomb']
+sg_list = ['EXO-45 Patriot Exosuit', 'E/MG-101 HMG Emplacement', 'FX-12 Shield Generator Relay', 'A/ARC-3 Tesla Tower', 'MD-6 Anti-Personnel Minefield', 'MD-I4 Incendiary Mines', 'A/MG-43 Machine Gun Sentry', 'A/G-16 Gatling Sentry', 'A/M-12 Mortar Sentry', 'A/AC-8 Autocannon Sentry', 'A/MLS-4X Rocket Sentry', 'A/M-23 EMS Mortar Sentry', 'Orbital Gatling Barrage', 'Orbital Airburst Strike', 'Orbital 120MM HE Barrage', 'Orbital 380MM HE Barrage', 'Orbital Walking Barrag', 'Orbital Laser', 'Orbital Railcannon Strike', 'Orbital Precision Strike', 'Orbital Gas Strike', 'Orbital EMS Strike', 'Orbital Smoke Strike', 'Eagle Strafing Run', 'Eagle Airstrike', 'Eagle Cluster Bomb', 'Eagle Napalm Airstrike', 'Eagle Smoke Strike', 'Eagle 110MM Rocket Pods', 'Eagle 500kg Bomb']
 booster = st.checkbox('Booster', key='bs')
 bs_list = ['Hellpod Space Optimization', 'Vitality Enhancement', 'UAV Recon Booster', 'Stamina Enhancement', 'Muscle Enhancement', 'Increased Reinforcement Budget', 'Flexible Reinforcement Budget', 'Localization Confusion Booster', 'Expert Extraction Pilot Booster']
 
@@ -62,7 +57,9 @@ if strat_backpack:
 if stratagem:
     n = 4 - strat_cntr
     sg_rand = random.choices(sg_list, k=n)
-    sg_output = ', '.join(sg_rand)
+    sg_output = """
+    
+                """.join(sg_rand)
 
 # Displaying randomized items
 if st.button('Submit'):
